@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DSS</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}" />
+  </head>
+  <body>
+    <h1 class="title">Download Scripts from Springfield</h1>
+    <div class="intro">
+      <a class="url" href="https://www.springfieldspringfield.co.uk/" target="_blank">Springfield</a>
+      라는 사이트에서 제공하는 영어 대본을 문서로 다운받을 수 있는
+      프로그램입니다.</br> 모든 시즌의 모든 에피소드가 다운로드 됩니다. 단, 제목 입력에 주의하세요!
+    </div>
+    <form action="\" method="get">
+      <div class="form-item">
+        <label for="title">🎬 제목</label>
+        <input type="text" name="title" id="title" placeholder="TV Show 제목을 입력하세요" required/>
+      </div>
+      <div class="form-item">
+        <label for="format">📃 문서 형식</label>
+        <select name="format" id="format">
+          <option vlaue="docx">docx</option>
+          <option vlaue="hwp">hwp</option>
+          <option vlaue="txt">txt</option>
+        </select>
+      </div>
+      <button class="form-item" type="submit">다운로드</button>
+    </form>
+    <div class="instruction">
+      <h2>다운로드 방법</h2>
+      <div>
+          <ol>
+            <li>
+              <span class="ex-text">
+                <a class="url" href="https://www.springfieldspringfield.co.uk/" target="_blank">Springfield</a> 사이트에 방문해 TV Show Episode Scripts 클릭
+              </span>
+              <img class="ex-image" src="{{url_for('static', filename='imgs/ex1.jpg')}}" alt="instruction-example-1" />
+            </li>
+            <li>
+              <span class="ex-text">
+                찾고있는 스크립트의 제목 검색 후 해당 제목 클릭
+              </span>
+              <img class="ex-image" src="{{url_for('static', filename='imgs/ex2.jpg')}}" alt="instruction-example-2" />
+              <img class="ex-image" src="{{url_for('static', filename='imgs/ex3.jpg')}}" alt="instruction-example-3" />
+            </li>
+            <li>
+              <span class="ex-text">
+                url에서 "https://...tv-show=HERE"의 HERE 부분 복사 후 제목 입력 칸에 복사
+              </span>
+              <img class="ex-image" src="{{url_for('static', filename='imgs/ex4.jpg')}}" alt="instruction-example-4" />
+              <img class="ex-image" src="{{url_for('static', filename='imgs/ex5.jpg')}}" alt="instruction-example-5" />
+             </li>
+          </ol>
+      </div>
+    </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <script>
+            alert("{{messages[-1]}}")
+        </script>
+    {% endif %}
+    {% endwith %}
+  </body>
+</html>
