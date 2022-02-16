@@ -88,3 +88,11 @@ li {
   max-width: 600px;
   margin-top: 5px;
 }
+
+/* mobile */
+@media screen and (max-width: 450px) {
+  .mobile-intro {
+    display: block;
+    font-size: 14px;
+  }
+}
