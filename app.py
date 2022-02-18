@@ -13,6 +13,10 @@ def index():
     title = request.args.get('title')
     format = request.args.get('format') or "docx"
 
+    if format not in ['docx', 'hwp', 'txt']:
+        flash("문서 형식이 올바르지 않습니다.")
+        return render_template('index.html')
+
     if title:
         res = download.get_episodes(title)
         status = res.get('status')
