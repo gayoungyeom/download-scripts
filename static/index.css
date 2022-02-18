@@ -1,5 +1,6 @@
 body {
-  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
   color: #212529;
 }
 
@@ -58,6 +59,11 @@ button {
   border-radius: 5px;
 }
 
+select {
+  height: 39px;
+  background-color: #fff;
+}
+
 button {
   background-color: #212529;
   color: #fff;
@@ -91,6 +97,9 @@ li {
 
 /* mobile */
 @media screen and (max-width: 450px) {
+  .intro {
+    padding: 5px;
+  }
   .mobile-intro {
     display: block;
     font-size: 14px;
